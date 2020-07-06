@@ -1,0 +1,43 @@
+   
+{% extends 'base.html' %}  
+
+{% block content %}
+
+<QuerySet [('Sydeny Fighters', 'team 6', 10), ('team 6', 'team 6', 10)]>
+
+  <div class="row mainContainer">
+    <div class="col-sm-12">
+      {% for team in match %}
+      <div class="col-sm-6 ">
+        
+        
+        <div class="matchResult">
+             
+            {{team.0}} 
+            <br >
+            {% if team.0 == team.1 %}
+            <div class="wone">
+              <span class="winner"> Winner </span><br>
+              <span class="points"> Point: {{team.2}} </span><br >
+
+              <i class="fa fa-trophy" ></i>
+            </div>
+            {% else %}
+            <div class="lost">
+              <span class="winner"> Lost </span><br>
+              <span class="points"> Point: 0 </span><br />
+              <i class="fa fa-frown-o" aria-hidden="true"></i>
+            </div>
+            {% endif %}
+        </div>    
+      </div>
+      {% endfor %}
+      
+       
+
+        
+        
+  
+    </div>
+  </div>
+  {% endblock %}
